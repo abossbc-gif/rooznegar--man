@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { RecordingEntry } from '../types';
 import { EntryItem } from './EntryItem';

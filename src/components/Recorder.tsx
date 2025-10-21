@@ -76,8 +76,8 @@ export const Recorder: React.FC<RecorderProps> = ({ onAddEntry }) => {
   }, []);
 
   const startRecording = async () => {
-    if (!process.env.API_KEY) {
-      alert("لطفاً کلید Gemini API را در متغیرهای محیطی تنظیم کنید.");
+    if (!process.env.API_KEY || process.env.API_KEY === 'YOUR_API_KEY_HERE') {
+      alert("برای استفاده از قابلیت تبدیل صدا به متن، باید کلید Gemini API خود را در سرویس Vercel تنظیم کنید.");
       return;
     }
     try {

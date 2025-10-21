@@ -1,4 +1,3 @@
-
 export const TAG_SUGGESTIONS = [
   "اوبر",
   "اسنپ",

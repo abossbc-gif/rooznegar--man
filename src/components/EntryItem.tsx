@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import type { RecordingEntry } from '../types';
 import { EditorModal } from './EditorModal';
