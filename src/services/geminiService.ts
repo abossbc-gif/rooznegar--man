@@ -1,15 +1,11 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { TAG_SUGGESTIONS } from "../constants";
 
-if (!process.env.API_KEY) {
-  console.warn("API_KEY environment variable not set. Gemini API calls will fail.");
-}
-
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
 
 export async function generateTagsFromText(text: string): Promise<string[]> {
-  if (!process.env.API_KEY || process.env.API_KEY === 'YOUR_API_KEY_HERE') {
-    console.error("Cannot generate tags: API_KEY is not configured.");
+  if (!process.env.API_KEY) {
+    console.error("Cannot generate tags: Gemini API key is not configured. Please set it in your environment variables.");
     return [];
   }
   if (!text.trim()) {
